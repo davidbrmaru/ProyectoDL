@@ -119,7 +119,7 @@ def progressive_with_dropout_randaug(
             callbacks=[lr_scheduler] if lr_scheduler is not None else [],
         )
         histories.append(history)
-    hhs = {kk: np.ravel([hh.history[kk] for hh in histories]).astype("float").tolist() for kk in history.history.keys()}
+    hhs = {kk: np.ravel([hh.history[kk] for hh in histories]).astype("object").tolist() for kk in history.history.keys()}
     return hhs
 
 
